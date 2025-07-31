@@ -1,27 +1,27 @@
 # Go Shamir Secret Sharing
 
-A high-performance, secure implementation of Shamir's Secret Sharing algorithm in Go. This library provides **16-30x better performance** than HashiCorp's Vault implementation while maintaining full API compatibility and adding enhanced security features.
+A high-performance, secure implementation of Shamir's Secret Sharing algorithm in Go with enhanced security features and optimized performance.
 
 ## Features
 
-- ✅ **100% API Compatible** with HashiCorp Vault's shamir package
-- ⚡ **16-30x Performance Improvement** over existing implementations
+- ⚡ **High Performance** with optimized GF(256) arithmetic operations
 - 🔒 **Enhanced Security Features** (memory zeroization, integrity checks, threshold enforcement)
 - 🧮 **Optimized GF(256) Arithmetic** with lookup tables and vectorization
-- 🔄 **Drop-in Replacement** for existing code
-- 📦 **Zero Dependencies** (except for benchmarking against HashiCorp)
+- 🔄 **Clean API Design** for easy integration
+- 📦 **Zero Dependencies** for production use
 
-## Performance Comparison
+## Performance
 
-| Operation | Our Implementation | HashiCorp Vault | Speedup |
-|-----------|-------------------|-----------------|---------|
-| Split (64KB) | **110.23 MB/s** | 6.61 MB/s | **16.7x** |
-| Combine (64KB) | **31.20 MB/s** | 1.07 MB/s | **29.2x** |
+Optimized for high throughput with efficient memory usage:
+- **110+ MB/s** throughput for large secrets
+- **Vectorized operations** using 8-byte chunks
+- **Pre-computed lookup tables** for GF(256) arithmetic
+- **Minimal memory allocations** in critical paths
 
 ## Installation
 
 ```bash
-go get github.com/rizkytaufiq/go-shamir
+go get github.com/morizta/go-shamir
 ```
 
 ## Quick Start
@@ -33,7 +33,7 @@ import (
     "fmt"
     "log"
     
-    "github.com/rizkytaufiq/go-shamir"
+    "github.com/morizta/go-shamir"
 )
 
 func main() {
@@ -205,5 +205,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - Based on Shamir's Secret Sharing algorithm
-- Inspired by HashiCorp Vault's implementation
 - Optimized for modern Go performance patterns
+- Implements standard cryptographic best practices

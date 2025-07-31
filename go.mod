@@ -1,5 +1,3 @@
-module github.com/rizkytaufiq/go-shamir
+module github.com/morizta/go-shamir
 
 go 1.24.3
-
-require github.com/hashicorp/vault v1.20.1
